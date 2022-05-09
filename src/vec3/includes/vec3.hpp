@@ -31,7 +31,6 @@ using point3 = vec3; // 3D point
 using color = vec3;  // RGB color
 
 // vec3 Utility Functions
-
 inline std::ostream &operator<<(std::ostream &out, const vec3 &v);
 inline vec3 operator+(const vec3 &u, const vec3 &v);
 inline vec3 operator-(const vec3 &u, const vec3 &v);
