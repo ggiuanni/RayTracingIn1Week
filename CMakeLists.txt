@@ -6,11 +6,27 @@ add_subdirectory(src/vec3)
 add_subdirectory(src/ray)
 target_link_libraries(ray PUBLIC vec3) 
 
-add_subdirectory(src/sphere)
+add_subdirectory(src/hittable)
 target_link_libraries(sphere PUBLIC ray)
+target_link_libraries(hittable_list PUBLIC ray)
+
+add_subdirectory(src/utils)
+target_link_libraries(utils PUBLIC ray)
+target_link_libraries(utils PUBLIC vec3)
+
+add_subdirectory(src/color)
+target_link_libraries(color PUBLIC utils) 
+
+add_subdirectory(src/camera)
+target_link_libraries(camera PUBLIC utils)
 
 add_executable(main
 src/main.cpp)
 
+target_link_libraries(main PRIVATE utils)
+target_link_libraries(main PRIVATE color)
+target_link_libraries(main PRIVATE sphere)
+target_link_libraries(main PRIVATE hittable_list)
 target_link_libraries(main PRIVATE ray)
 target_link_libraries(main PRIVATE vec3)
+target_link_libraries(main PRIVATE camera)
