@@ -21,5 +21,5 @@ git config core.autocrlf true
 After building run the application in this way:
 
 ```powershell
-.\main.exe > image.ppm
+.\path\to\file\main.exe | Out-File -Encoding ASCII image.ppm
 ```
