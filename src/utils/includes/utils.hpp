@@ -1,5 +1,5 @@
-#ifndef RTWEEKEND_H
-#define RTWEEKEND_H
+#ifndef UTILS_H
+#define UTILS_H
 
 #include <cmath>
 #include <limits>
@@ -44,10 +44,5 @@ inline double clamp(double x, double min, double max)
         return max;
     return x;
 }
-
-// Common Headers
-
-#include "ray.hpp"
-#include "vec3.hpp"
 
 #endif
